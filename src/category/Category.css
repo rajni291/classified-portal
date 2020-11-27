@@ -4,5 +4,16 @@
     font-family: cursive;
 }
 .category-container{
-padding: 10px;
+    padding: 10px;
+}
+.category-tile{
+    width: 200px;
+    height: 200px;
+    background-color: lavender;
+    margin-left: 20px;
+}
+.tile-container{
+    display: flex;
+    justify-content: center;
+
 }

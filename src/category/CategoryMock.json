@@ -1,0 +1,205 @@
+[
+    {
+      "id": "prop",
+      "category": "property",
+      "subcategory": [
+        {
+          "name": "rental",
+          "items": [
+            {
+              "id": "1",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,I want to rent my 2 bhk flat etc etc..",
+              "price": 1000,
+              "type": "flat"
+            },
+            {
+              "id": "2",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000,
+              "type": "rent"
+            }
+          ]
+        },
+        {
+          "name": "bunglow",
+          "items": [
+            {
+              "id": "3",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,I want to sell my 2 bhk flat etc etc..",
+              "price": 1000
+            },
+            {
+              "id": "4",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000
+            }
+          ]
+        },
+        {
+          "name": "Flat",
+          "items": [
+            {
+              "id": "5",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,looking for roomate",
+              "price": 1000
+            },
+            {
+              "id": "6",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vcl",
+      "category": "Vehicle",
+      "subcategory": [
+        {
+          "name": "Car",
+          "items": [
+            {
+              "id": "7",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,I want to rent my 2 bhk flat etc etc..",
+              "price": 1000,
+              "type": "pool"
+            },
+            {
+              "id": "8",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000,
+              "type": "pool"
+            }
+          ]
+        },
+        {
+          "name": "bikes",
+          "items": [
+            {
+              "id": "9",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,I want to sell my 2 bhk flat etc etc..",
+              "price": 1000,
+              "type": "sell"
+            },
+            {
+              "id": "10",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000,
+              "type": "sell"
+            }
+          ]
+        },
+        {
+          "name": "other",
+          "items": [
+            {
+              "id": "11",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,looking for roomate",
+              "price": 1000,
+              "type": "sell"
+            },
+            {
+              "id": "12",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000,
+              "type": "sell"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acc",
+      "category": "Accessroies",
+      "subcategory": [
+        {
+          "name": "Mobile",
+          "items": [
+            {
+              "id": "13",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,I want to rent my 2 bhk flat etc etc..",
+              "price": 1000,
+              "type": "sell"
+            },
+            {
+              "id": "13",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000,
+              "type": "sell"
+            }
+          ]
+        },
+        {
+          "name": "Laptop",
+          "items": [
+            {
+              "id": "14",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,I want to sell my 2 bhk flat etc etc..",
+              "price": 1000,
+              "type": "sell"
+            },
+            {
+              "id": "15",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000,
+              "type": "sell"
+            }
+          ]
+        },
+        {
+          "name": "other",
+          "items": [
+            {
+              "id": "16",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "Hello All,looking for roomate",
+              "price": 1000,
+              "type": "sell"
+            },
+            {
+              "id": "17",
+              "startDate": "2020-11-17T03:58:00Z",
+              "owner": "rajni",
+              "description": "some desc",
+              "price": 1000,
+              "type": "sell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
