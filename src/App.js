@@ -1,4 +1,4 @@
-import logo3 from './logo3.png';
+import header from './header.png';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Category from './category/Category';
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">  
-      <img className="dashboard-tabs-icon" src={logo3} alt="" height="70px"  />
+      <img className="dashboard-tabs-icon" src={header} alt="" height="70px"  />
       <div className="title"> One Click</div>
       </header>
       <div className="content-body">
