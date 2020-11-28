@@ -134,7 +134,7 @@
       ]
     },
     {
-      "id": "acc",
+      "id": "elec",
       "category": "Electronics",
       "subcategory": [
         {
@@ -203,7 +203,7 @@
       ]
     },
     {
-        "id": "furniture",
+        "id": "fur",
         "category": "Furniture",
         "subcategory": [
           {
@@ -268,7 +268,7 @@
         ]
     },
     {
-        "id": "prop",
+        "id": "home",
         "category": "Home Appliances",
         "subcategory": [
           {
@@ -333,7 +333,7 @@
         ]
     },
     {
-        "id": "miscellaneous",
+        "id": "misc",
         "category": "Miscellaneous",
         "subcategory": [
           {

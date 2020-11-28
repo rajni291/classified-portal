@@ -1,17 +1,17 @@
 .cateogry-title{
-    font-weight: 800;
+    font-weight: 600;
     font-size: 20px;
-    font-family: cursive;
+    font-family: sans-serif;
 }
 .category-container{
-    padding: 10px;
+    padding: 20px;
 }
 .category-tile{
     width: 200px;
     height: 200px;
-    background-color: lavender;
+    background-color: #8080801a;
     margin-left: 20px;
-    margin-bottom:20px
+    margin-bottom:20px;
 }
 .tile-container{
     display: flex;
@@ -23,4 +23,16 @@
     width: 700px;
     margin: 0 auto
 
+}
+.category-icon{
+    height: 135px;
+    width: 170px;
+    padding-top: 25px;
+}
+.category-text{
+    font-family: sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    /* height: 30px; */
+    background-color: #80008036
 }
