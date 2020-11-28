@@ -12,10 +12,10 @@
     background-color: #8080801a;
     margin-left: 20px;
     margin-bottom:20px;
+    cursor: pointer;
 }
 .tile-container{
     display: flex;
-    /* justify-content: center; */
     padding-top: 30px;
     align-items: center;
     flex-direction: row;
@@ -33,6 +33,5 @@
     font-family: sans-serif;
     padding: 10px;
     font-size: 16px;
-    /* height: 30px; */
     background-color: #80008036
 }

@@ -1,28 +1,37 @@
 import header from './header.png';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import './App.css';
 import Category from './category/Category';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">  
-      <img className="dashboard-tabs-icon" src={header} alt="" height="70px"  />
-      <div className="title"> One Click</div>
-      </header>
-      <div className="content-body">
-      {
-          <Router>
+      <Router>
+        <header className="App-header">
+
+          <img className="dashboard-tabs-icon" src={header} alt="" height="70px" />
+
+          <NavLink to="/category" activeClassName="active" className="Link-header" >
+            <div className="title"> One Click</div>
+          </NavLink>
+
+          <NavLink to="/postadd" activeClassName="active" className="Link-header" >
+            <div className="post" >Post Ads</div>
+          </NavLink>
+          
+        </header>
+
+        <div className="content-body">
+          {
+            <Router>
               <Switch>
-                  <Route exact path="/"  >
-                      <div>
-                          <Category />
-                      </div>
-                  </Route>
+                <Route exact path="/category" component={Category} />
+                <Route exact path="/" component={Category} />
               </Switch>
-          </Router>
-      }
-  </div>
+            </Router>
+          }
+        </div>
+      </Router>
     </div>
   );
 }
