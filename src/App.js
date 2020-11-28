@@ -18,7 +18,7 @@ function App() {
           <NavLink to="/postadd" activeClassName="active" className="Link-header" >
             <div className="post" >Post Ads</div>
           </NavLink>
-          
+
         </header>
 
         <div className="content-body">
@@ -32,6 +32,8 @@ function App() {
           }
         </div>
       </Router>
+
+      <footer className="footer">About us</footer>
     </div>
   );
 }
