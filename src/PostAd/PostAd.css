@@ -1,0 +1,36 @@
+.form-container{
+    height: 100%;
+    background-color: #589b4a1a;
+    width: 700px;
+    margin: 0 auto;
+    /* background-color: #8080801a; */
+    padding-bottom: 10px;
+    display: table;
+}
+.form-select{
+    height: 25px;
+}
+.table-wrapper{
+    display: table-row;
+    padding-top: 20px;
+}
+.first-label{
+    display: table-cell;
+    margin-left: 20px;
+    text-align: right;
+    padding: 20px;
+}
+
+.second-label{
+    display: table-cell;
+    margin-left: 20px;
+    width: 400px;
+}
+.descr{
+    height: 200px;
+}
+.post-form{
+    padding: 20px;
+    margin-top: 30px;
+}
+

@@ -13,58 +13,6 @@
   }
 }
 
-.App-header {
-  /* background-color: #282c34;
-  min-height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-  font-size: calc(10px + 2vmin);
-  color: white;
-  position: fixed;
-  width: 100%;
-}
-
-.App-link {
-  color: #61dafb;
-}
-.dashboard-tabs-icon {
-  height: 215px;
-}
-.title {
-  position: absolute;
-  font-size: 70px;
-  color: purple;
-  font-family: sans-serif;
-  top:4px;
-}
-.content-body{
-  height: 540px;
-  padding-top: 230px;
-  padding-bottom: 10px;
-}
-.post{
-  position: absolute;
-  padding: 10px;
-  width: 100px;
-  font-size: 20px;
-  background-color: cornflowerblue;
-  border-radius: 4px;
-  top: 185px;
-  right: 20%;
-  cursor: pointer;
-}
-
-.Link-header{
-  text-decoration: none;
-  color: white;
- }
- 
- .footer{
-   background-color: #8080801a;
-   padding: 10px;
- }
 
 @keyframes App-logo-spin {
   from {
