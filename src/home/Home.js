@@ -3,7 +3,7 @@ import header from '../header.png';
 import { HashRouter as Router, Route, Switch, NavLink, useLocation } from 'react-router-dom';
 import './Home.css';
 import Category from '../category/Category';
-import PostAd from '../postAd/PostAd';
+import PostAd from '../PostAd/PostAd';
 import {categoryService} from '../category/CategoryService';
 import { createBrowserHistory } from "history";
 
@@ -38,7 +38,7 @@ class Home extends Component {
                         <img className="dashboard-tabs-icon" src={header} alt="" height="70px" />
 
                         <NavLink to="/category" activeClassName="active" className="Link-header" >
-                            <div className="title"> One Click</div>
+                            {/* <div className="title"> One Click</div> */}
                         </NavLink>
 
                         <NavLink to="/postadd" className="Link-header"  >
