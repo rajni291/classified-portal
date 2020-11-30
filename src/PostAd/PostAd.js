@@ -18,7 +18,7 @@ class PostAd extends Component {
     categorySelected = event => {
         this.setState({ subCategories: [] });
         let currentVal = event.target.value;
-        let selectCateogry = this.props.categories.filter(x => x.id === currentVal)[0];
+        let selectCateogry = this.props.categories.filter(x => x.catId === currentVal)[0];
 
         this.setState({
             selectCateogry: selectCateogry,
@@ -40,7 +40,7 @@ class PostAd extends Component {
                             {
                                 this.props.categories.map((item, i) => {
                                     return (
-                                        <option value={item.id} key={i}>{item.name}</option>
+                                        <option value={item.catId} key={i}>{item.catName}</option>
                                     )
                                 })
                             }
@@ -56,7 +56,7 @@ class PostAd extends Component {
                             {
                                 this.state.subCategories.map((item, i) => {
                                     return (
-                                        <option value={item.id} key={i}>{item.name}</option>
+                                        <option value={item.subCatId} key={i}>{item.subCatName}</option>
                                     )
                                 })
                             }

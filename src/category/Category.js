@@ -45,9 +45,9 @@ class Cateogry extends Component {
                         this.props.categories.map((item, i) => {
                             return (
                                 <div key={i} className="category-tile">
-                                    <div className="category-text">{item.name}</div>
+                                    <div className="category-text">{item.catName}</div>
                                     <div className="icon-container">
-                                        <img  className="category-icon" src={this.getImageSrc(item.id)} alt="" height="70px" />
+                                        <img  className="category-icon" src={this.getImageSrc(item.catId)} alt="" height="70px" />
                                     </div>
                                 </div>
                             )

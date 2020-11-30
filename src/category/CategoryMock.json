@@ -1,135 +1,135 @@
 [
   {
-    "id": "prop",
-    "name": "Property",
+    "catId": "prop",
+    "catName": "Property",
     "visible": true,
     "subCategory":[
       {
-        "id":"flat",
-        "name": "Flat"
+        "subCatId":"flat",
+        "subCatName": "Flat"
       },
       {
-        "id":"bunglow",
-        "name": "Bunglow"
+        "subCatId":"bunglow",
+        "subCatName": "Bunglow"
       },
       {
-        "id":"rowHouse",
-        "name": "Row House"
+        "subCatId":"rowHouse",
+        "subCatName": "Row House"
       }
       ]
   },
   {
-    "id": "vcl",
-    "name": "Vehicle",
+    "catId": "vcl",
+    "catName": "Vehicle",
     "visible": true,
      "subCategory":[
       {
-        "id":"car",
-        "name": "Car"
+        "subCatId":"car",
+        "subCatName": "Car"
       },
       {
-        "id":"bike",
-        "name": "Bike"
+        "subCatId":"bike",
+        "subCatName": "Bike"
       },
       {
-        "id":"other",
-        "name": "other"
+        "subCatId":"other",
+        "subCatName": "other"
       }
       ]
   },
   {
-    "id": "fur",
-    "name": "Furniture",
+    "catId": "fur",
+    "catName": "Furniture",
     "visible": true,
     "lisitng_count": 3,
     "subCategory":[
       {
-        "id":"chair",
-        "name": "Chair"
+        "subCatId":"chair",
+        "subCatName": "Chair"
       },
       {
-        "id":"table",
-        "name": "Table"
+        "subCatId":"table",
+        "subCatName": "Table"
       },
       {
-        "id":"cupboard",
-        "name": "Cupboard"
+        "subCatId":"cupboard",
+        "subCatName": "Cupboard"
       },
        {
         "id":"other",
-        "name": "other"
+        "subCatName": "other"
       }
       ]
   },
   {
-    "id": "elec",
-    "name": "Electronics",
+    "catId": "elec",
+    "catName": "Electronics",
     "visible": true,
     "lisitng_count": 3,
     "subCategory":[
       {
-        "id":"chair",
-        "name": "Chair"
+        "subCatId":"chair",
+        "subCatName": "Chair"
       },
       {
-        "id":"table",
-        "name": "Table"
+        "subCatId":"table",
+        "subCatName": "Table"
       },
       {
-        "id":"cupboard",
-        "name": "Cupboard"
+        "subCatId":"cupboard",
+        "subCatName": "Cupboard"
       },
        {
         "id":"other",
-        "name": "other"
+        "subCatName": "other"
       }
       ]
   },
   {
-    "id": "home",
-    "name": "Home Appliances",
+    "catId": "home",
+    "catName": "Home Appliances",
     "visible": true,
     "lisitng_count": 3,
     "subCategory":[
       {
-        "id":"chair",
-        "name": "Chair"
+        "subCatId":"chair",
+        "subCatName": "Chair"
       },
       {
-        "id":"table",
-        "name": "Table"
+        "subCatId":"table",
+        "subCatName": "Table"
       },
       {
-        "id":"cupboard",
-        "name": "Cupboard"
+        "subCatId":"cupboard",
+        "subCatName": "Cupboard"
       },
        {
         "id":"other",
-        "name": "other"
+        "subCatName": "other"
       }
       ]
   },
   {
-    "id": "misc",
-    "name": "Miscellaneous",
+    "catId": "misc",
+    "catName": "Miscellaneous",
     "visible": true,
     "lisitng_count": 3,
     "subCategory":[
       {
-        "id":"chair",
-        "name": "Chair"
+        "subCatId":"chair",
+        "subCatName": "Chair"
       },
       {
-        "id":"table",
-        "name": "Table"
+        "subCatId":"table",
+        "subCatName": "Table"
       },
       {
-        "id":"cupboard",
-        "name": "Cupboard"
+        "subCatId":"cupboard",
+        "subCatName": "Cupboard"
       },
        {
-        "id":"other",
-        "name": "other"
+        "subCatId":"other",
+        "subCatName": "other"
       }
       ]
   }
