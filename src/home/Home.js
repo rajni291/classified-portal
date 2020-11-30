@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import header from '../header.png';
-import { HashRouter as Router, Route, Switch, NavLink, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import './Home.css';
 import Category from '../category/Category';
-import PostAd from '../PostAd/PostAd';
-import {categoryService} from '../category/CategoryService';
-import { createBrowserHistory } from "history";
-
+import PostAd from '../postAd/PostAd';
+import firebase from '../core/firebase';
 
 class Home extends Component {
 
@@ -18,20 +16,27 @@ class Home extends Component {
 
 
     componentDidMount() {
-        this.history = createBrowserHistory()
-
-        categoryService.getAllCategory().then(result => {
-            this.setState(
-                {  allCategories: result, 
-                    loading: false 
+        var categoryRef = firebase.firestore().collection('Category');
+        let cateData = [];
+        // eslint-disable-next-line no-undef
+        categoryRef.get()
+            .then(snapshot => {
+                snapshot.forEach(category => {
+                    cateData.push(category.data());
                 });
-        })
 
+                this.setState(
+                    {
+                        allCategories: cateData,
+                        loading: false
+                    });
+
+            })
     }
 
     render() {
         return (
-            !this.state.loading  && this.state.allCategories.length >0 &&  <div>
+            !this.state.loading && this.state.allCategories.length > 0 && <div>
                 <Router>
                     <header className="App-header">
 
@@ -51,9 +56,9 @@ class Home extends Component {
                         {
                             <Router>
                                 <Switch>
-                                    <Route exact path="/category" component={()=> <Category categories={this.state.allCategories} />} />
-                                    <Route exact path="/postadd" component={()=> <PostAd categories={this.state.allCategories} />} />
-                                    <Route exact path="/" component={()=> <Category categories={this.state.allCategories} />} />
+                                    <Route exact path="/category" component={() => <Category categories={this.state.allCategories} />} />
+                                    <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} />} />
+                                    <Route exact path="/" component={() => <Category categories={this.state.allCategories} />} />
                                 </Switch>
                             </Router>
                         }
@@ -67,4 +72,4 @@ class Home extends Component {
 }
 
 
-   export default Home;
+export default Home;
