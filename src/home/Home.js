@@ -43,7 +43,7 @@ class Home extends Component {
                         <img className="dashboard-tabs-icon" src={header} alt="" height="70px" />
 
                         <NavLink to="/category" activeClassName="active" className="Link-header" >
-                            <div className="title"> One Click</div>
+                            {/* <div className="title"> One Click</div> */}
                         </NavLink>
 
                         <NavLink to="/postadd" className="Link-header"  >
