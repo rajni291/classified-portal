@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
-import header from '../header.png';
+import sell from '../core/assets/sell.png';
 import { HashRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import './Home.css';
 import Category from '../category/Category';
 import PostAd from '../postAd/PostAd';
 import firebase from '../core/firebase';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+
 
 class Home extends Component {
 
 
     state = {
         allCategories: [],
-        loading: true
+        loading: true,
+        loggedout: false
+    }
+
+    constructor(props) {
+        super(props);
+        if (this.props.currentUser) {
+            this.email = this.props.currentUser.email;
+            this.loggedout = false;
+        }
+
     }
 
 
@@ -34,13 +47,40 @@ class Home extends Component {
             })
     }
 
+    signout = () => {
+        this.setState({ loggedout: true })
+        firebase.auth().signOut().then(function () {
+            console.log('signed out successfully')
+
+            // Sign-out successful.
+        }).catch(function (error) {
+            console.log('sign out failed')
+            // An error happened.
+        });
+    }
+
+
     render() {
+
+        if (this.state.loggedout) {
+            return (<div className="sign-out">
+                <div className={this.state.loggedout ? 'show' : 'hide'}>you are signed out successfully</div>
+            </div>)
+        }
+
         return (
             !this.state.loading && this.state.allCategories.length > 0 && <div>
                 <Router>
                     <header className="App-header">
+                        <div className="profile-header">
+                            <div className="profile" onClick={() => this.signout()}>
+                                <div className="profile-text" >{this.email}</div>
+                                <div className="pull-right"><FontAwesomeIcon icon={faUserCircle} /></div>
+                            </div>
 
-                        <img className="dashboard-tabs-icon" src={header} alt="" height="70px" />
+                        </div>
+
+                        <img className="dashboard-tabs-icon" src={sell} alt="" height="70px" />
 
                         <NavLink to="/category" activeClassName="active" className="Link-header" >
                             {/* <div className="title"> One Click</div> */}
@@ -50,15 +90,17 @@ class Home extends Component {
                             <div className="post" >Post Ads</div>
                         </NavLink>
 
+
                     </header>
 
                     <div className="content-body">
                         {
                             <Router>
                                 <Switch>
+                                    <Route exact path="/" component={() => <Category categories={this.state.allCategories} />} />
+
                                     <Route exact path="/category" component={() => <Category categories={this.state.allCategories} />} />
                                     <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} />} />
-                                    <Route exact path="/" component={() => <Category categories={this.state.allCategories} />} />
                                 </Switch>
                             </Router>
                         }

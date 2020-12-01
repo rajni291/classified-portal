@@ -1,0 +1,47 @@
+.login-form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  border: 1px solid #63b3ed;
+  position: relative;
+  height: 400px;
+}
+.container {
+  height: 600px;
+  padding: 60px;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(../assets/Web_Photo_Editor.jpg) repeat;
+
+}
+.block {
+  display: block;
+}
+input.control-width,
+.ctrl-padding {
+  width: 100%;
+  margin-bottom: 30px;
+  height: 20px;
+  background-color: #add8e666;
+}
+.ctrl-padding {
+  margin-bottom: 20px;
+}
+button.signIn {
+  width: 100%;
+  background-color: #68d391;
+  height: 40px;
+  cursor: pointer;
+}
+.signin-container {
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 4%;
+  width: 90%;
+}
+.signIn-title {
+  font-weight: 600;
+  font-size: 1.875rem;
+  text-align: center;
+  padding-bottom: 30px;
+  font-family: sans-serif;
+}
