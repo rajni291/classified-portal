@@ -4,12 +4,14 @@
   padding: 40px;
   box-sizing: border-box;
   border: 1px solid #63b3ed;
-  height: 100%;
   position: relative;
+  height: 400px;
 }
 .container {
-  height: 400px;
+  height: 600px;
   padding: 60px;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(../assets/Web_Photo_Editor.jpg) repeat;
+
 }
 .block {
   display: block;
@@ -28,6 +30,7 @@ button.signIn {
   width: 100%;
   background-color: #68d391;
   height: 40px;
+  cursor: pointer;
 }
 .signin-container {
   padding-bottom: 10px;

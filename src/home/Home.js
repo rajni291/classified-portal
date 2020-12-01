@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import header from '../header.png';
+import sell from '../core/assets/sell.png';
 import { HashRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import './Home.css';
 import Category from '../category/Category';
 import PostAd from '../postAd/PostAd';
 import firebase from '../core/firebase';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+
 
 class Home extends Component {
 
@@ -58,18 +61,26 @@ class Home extends Component {
 
 
     render() {
+
         if (this.state.loggedout) {
-            return (<div>
-                    <div className={this.state.loggedout ? 'show' : 'hide'}>you are signed out successful</div>
-                </div>)
+            return (<div className="sign-out">
+                <div className={this.state.loggedout ? 'show' : 'hide'}>you are signed out successfully</div>
+            </div>)
         }
 
         return (
             !this.state.loading && this.state.allCategories.length > 0 && <div>
                 <Router>
                     <header className="App-header">
+                        <div className="profile-header">
+                            <div className="profile" onClick={() => this.signout()}>
+                                <div className="profile-text" >{this.email}</div>
+                                <div className="pull-right"><FontAwesomeIcon icon={faUserCircle} /></div>
+                            </div>
 
-                        <img className="dashboard-tabs-icon" src={header} alt="" height="70px" />
+                        </div>
+
+                        <img className="dashboard-tabs-icon" src={sell} alt="" height="70px" />
 
                         <NavLink to="/category" activeClassName="active" className="Link-header" >
                             {/* <div className="title"> One Click</div> */}
@@ -79,7 +90,6 @@ class Home extends Component {
                             <div className="post" >Post Ads</div>
                         </NavLink>
 
-                        <div className="profile" onClick={() => this.signout()}>{this.email}</div>
 
                     </header>
 
