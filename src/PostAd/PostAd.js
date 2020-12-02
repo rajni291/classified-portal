@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './PostAd.css';
+import firebase from '../core/firebase';
+import { v4 as uuidv4 } from 'uuid';
+import { Redirect } from 'react-router-dom';
+
 
 class PostAd extends Component {
 
@@ -13,12 +17,13 @@ class PostAd extends Component {
         subCategories: [],
         selectedCategory: undefined,
         selectedSubCatgory: undefined,
-        adType:undefined,
-        country:undefined,
-        description:'',
-        location:'',
-        price:'',
-        title:''
+        adType: undefined,
+        country: undefined,
+        description: '',
+        location: '',
+        price: '',
+        title: '',
+        isRedirected: false
     }
 
 
@@ -28,7 +33,7 @@ class PostAd extends Component {
         let selectCateogry = this.props.categories.filter(x => x.catId === currentVal)[0];
 
         this.setState({
-            selectedCateogry: currentVal,
+            selectedCategory: currentVal,
             subCategories: selectCateogry.subCategory
         });
     }
@@ -40,9 +45,59 @@ class PostAd extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state, 'submit');
+
+        const today = new Date();
+        today.setHours(0);
+        today.setMinutes(0);
+        today.setMilliseconds(0);
+        today.setSeconds(0);
+
+        let data = {
+            adType: this.state.adType,
+            contact: 957612022,
+            description: this.state.description,
+            listingId: uuidv4(),
+            subcategoryId: this.state.selectedSubCatgory,
+            country: this.state.country,
+            location: this.state.location,
+            owner: this.props.owner.email,
+            startDate: today,
+            title: this.state.title,
+            isSoldout: false
+        }
+
+        let userActivityRef = firebase.firestore().collection('ClassfiedAds');
+        userActivityRef.where('catId', '==', this.state.selectedCategory).get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+                    // var listItem = [];
+                    userActivityRef.doc().set({
+                        catId: this.state.selectedCategory,
+                        adListing: [data]
+                    }).then(() => {
+                        this.setState({ isRedirected: true });
+
+                    });
+                }
+
+                snapshot.forEach(userDoc => {
+                    let updatedData = userDoc.data();
+                    updatedData.adListing.push(data);
+                    userActivityRef.doc(userDoc.id).update(updatedData).then(() => {
+                        this.setState({ isRedirected: true });
+                    })
+
+                });
+            })
+            .catch(err => {
+                console.log('Error getting documents', err);
+            });
+
     }
 
     render() {
+        if (this.state.isRedirected)
+            return (<Redirect to='/allAds' />)
         return (
             <div className="category-container">
                 <div className="cateogry-title">Post Ads</div>
@@ -51,7 +106,7 @@ class PostAd extends Component {
                         <label className="first-label">
                             Category
                         </label>
-                        <select className="second-label form-select" value={this.state.selectedCateogry} onChange={this.categorySelected}>
+                        <select className="second-label form-select" value={this.state.selectedCategory} onChange={this.categorySelected}>
                             <option value="" key="-1"></option>
                             {
                                 this.props.categories.map((item, i) => {
@@ -115,6 +170,11 @@ class PostAd extends Component {
                     </div>
 
                     <div className="table-wrapper">
+                        <label className="first-label">Contact Number</label>
+                        <input className="second-label form-select" type="number" value={this.state.contact} onChange={(e) => this.setState({ contact: e.currentTarget.value })} />
+                    </div>
+
+                    <div className="table-wrapper">
                         <label className="first-label">Ad Title</label>
                         <input className="second-label form-select" type="string"
                             value={this.state.title} onChange={(e) => this.setState({ title: e.currentTarget.value })} />
@@ -130,6 +190,7 @@ class PostAd extends Component {
                         <label className="first-label">Price</label>
                         <input className="second-label form-select" type="number" value={this.state.price} onChange={(e) => this.setState({ price: e.currentTarget.value })} />
                     </div>
+
 
                     <div><input type="submit" value="Submit" /></div>
                 </form>
