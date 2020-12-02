@@ -192,7 +192,7 @@ class PostAd extends Component {
                     </div>
 
 
-                    <div><input type="submit" value="Submit" /></div>
+                    <div className="submit"><input type="submit" value="Post" /></div>
                 </form>
 
             </div>

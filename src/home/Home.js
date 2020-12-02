@@ -7,6 +7,7 @@ import CategoryDetail from '../categoryDetail/CategoryDetail';
 import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import AdListing from '../postAd/AdListing';
 
 
@@ -74,6 +75,11 @@ class Home extends Component {
             !this.state.loading && this.state.allCategories.length > 0 && <div>
                 <Router>
                     <div className="profile-header">
+                        <div className="home" >
+                            <NavLink to="/" className="Link-header" >
+                                <FontAwesomeIcon icon={faHome} />
+                            </NavLink>
+                        </div>
                         <div className="profile" onClick={() => this.signout()}>
                             <div className="profile-text" >{this.email}</div>
                             <div className="pull-right" >

@@ -119,3 +119,8 @@ font-size: 28px;
     padding-right: 5px;
     cursor: pointer;
 }
+.home{
+  position: absolute;
+  font-size: 25px;
+  left: 1%;
+}
