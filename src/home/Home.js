@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import sell from '../core/assets/sell.png';
 import { HashRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import './Home.css';
+import {categoryService} from '../category/CategoryService';
 import Category from '../category/Category';
-import PostAd from '../postAd/PostAd';
+import PostAd from '../PostAd/PostAd';
+import CategoryDetail from '../categoryDetail/CategoryDetail';
 import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
@@ -44,7 +45,8 @@ class Home extends Component {
                         loading: false
                     });
 
-            })
+            });
+
     }
 
     signout = () => {
@@ -71,8 +73,7 @@ class Home extends Component {
         return (
             !this.state.loading && this.state.allCategories.length > 0 && <div>
                 <Router>
-                    <header className="App-header">
-                        <div className="profile-header">
+                <div className="profile-header">
                             <div className="profile" onClick={() => this.signout()}>
                                 <div className="profile-text" >{this.email}</div>
                                 <div className="pull-right"><FontAwesomeIcon icon={faUserCircle} /></div>
@@ -80,19 +81,12 @@ class Home extends Component {
 
                         </div>
 
-                        <img className="dashboard-tabs-icon" src={sell} alt="" height="70px" />
 
                         <NavLink to="/category" activeClassName="active" className="Link-header" >
                             {/* <div className="title"> One Click</div> */}
                         </NavLink>
 
-                        <NavLink to="/postadd" className="Link-header"  >
-                            <div className="post" >Post Ads</div>
-                        </NavLink>
-
-
-                    </header>
-
+                       
                     <div className="content-body">
                         {
                             <Router>
@@ -101,6 +95,7 @@ class Home extends Component {
 
                                     <Route exact path="/category" component={() => <Category categories={this.state.allCategories} />} />
                                     <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} />} />
+                                    <Route exact path="/categoryDetail/:catId" component={() => <CategoryDetail categories={this.state.allCategories} />} />
                                 </Switch>
                             </Router>
                         }

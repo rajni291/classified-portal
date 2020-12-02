@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router";
+import {  NavLink } from 'react-router-dom';
 import './Category.css'
 import property from '../core/assets/property.png';
 import vehicle from '../core/assets/vehicle.png';
@@ -6,6 +8,7 @@ import miscellaneous from '../core/assets/miscellaneous.png';
 import furniture from '../core/assets/furniture.png';
 import electronics from '../core/assets/electronics.png';
 import home from '../core/assets/home.png';
+import sell from '../core/assets/sell.png';
 
 class Cateogry extends Component {
 
@@ -14,6 +17,9 @@ class Cateogry extends Component {
         this.url = '../core/assets/';
     }
 
+   redirectCategoryDetail= (id) =>{
+      this.props.history.push("/categoryDetail/"+id);
+    }
 
     getImageSrc = (id) => {
 
@@ -58,13 +64,20 @@ class Cateogry extends Component {
 
     render() {
         return (
-            <div className="category-container">
+            <div>
+                 <div className="category-header">
+                        <img className="dashboard-tabs-icon" src={sell} alt="" height="70px" />
+                        <NavLink to="/postadd" className="Link-header"  >
+                            <div className="post" >Post Ads</div>
+                        </NavLink>
+                </div>
+                <div className="category-container">
                 <div className="cateogry-title">Browse Categories</div>
                 <div className="tile-container">
                     {
                         this.props.categories.map((item, i) => {
                             return (
-                                <div key={i} className="category-tile">
+                                <div key={i} className="category-tile" onClick={() => this.redirectCategoryDetail(item.catId)}>
                                     {/* <div className="category-text">{item.catName}</div> */}
                                     <img  className="category-icon" src={this.getImageSrc(item.catId)} alt="" height="70px" />
                                     <div className="icon-container" style={{backgroundColor:this.getbgColor(item.catId)}}>
@@ -77,13 +90,10 @@ class Cateogry extends Component {
 
                 </div>
             </div>
+            </div>
+            
         )
     }
 }
 
-// Cateogry.defaultProps ={
-//     categories: PropTypes.array = []
-// }
-
-
-export default Cateogry;
+export default withRouter(Cateogry);

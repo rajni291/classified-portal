@@ -26,9 +26,7 @@
     top:4px;
   }
   .content-body{
-    height: 540px;
-    padding-top: 230px;
-    padding-bottom: 40px;
+    padding-top: 25px;
     text-align: center;
     background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(./Web_Photo_Editor.jpg) repeat;
     background-size: 90%;
@@ -94,6 +92,7 @@
 }
 
 .profile-header{
+  color:white;
   position: fixed;
   width: 100%;
   background-color: black;

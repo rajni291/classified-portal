@@ -6,15 +6,80 @@
     "subCategory":[
       {
         "subCatId":"flat",
-        "subCatName": "Flat"
+        "subCatName": "Flat",
+        "subCatList":[{
+          "id": "1",
+          "startDate": "2020-11-17T03:58:00Z",
+          "owner": "rajni",
+          "ownerId": "P10498400",
+          "interestedId":["",""],
+          "img":"",
+          "title":"2 BHK Flat in Mumbai",
+          "description": "2 bhk flat is available for rent and Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+          "price": 5000,
+          "type": "rent",  
+          "sellType":"buy" 
+        },{
+          "id": "2",
+          "startDate": "2020-11-17T03:58:00Z",
+          "owner": "ashwini",
+          "ownerId": "P10498401",
+          "interestedId":["P10498400",""],
+          "img":"flt1.jpg",
+          "title":"2.5 BHK Flat from Nivember",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+          "price": 10000,
+          "sellType": "soldout",
+          "type":"rent"
+        },{
+          "id": "3",
+          "startDate": "2020-11-17T03:58:00Z",
+          "owner": "ashwini",
+          "ownerId": "P10498401",
+          "interestedId":[],
+          "img":"",
+          "title":"1 RK Flat available for sell",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+          "price": 500000,
+          "sellType": "sell",
+          "type":"sell"
+        }
+
+        ]
       },
       {
         "subCatId":"bunglow",
-        "subCatName": "Bunglow"
+        "subCatName": "Bunglow",
+        "subCatList":[{
+          "id": "11",
+          "startDate": "2020-11-17T03:58:00Z",
+          "owner": "abc",
+          "ownerId": "P10498400",
+          "interestedId":["",""],
+          "img":"bnglw1.jpg",
+          "title":"3 BHK Bunglow in Kharadi",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+          "price": 50000000,
+          "type": "sell",  
+          "sellType":"sell" 
+        }]
       },
       {
         "subCatId":"rowHouse",
-        "subCatName": "Row House"
+        "subCatName": "Row House",
+        "subCatList":[{
+          "id": "111",
+          "startDate": "2020-11-17T03:58:00Z",
+          "owner": "qwe",
+          "ownerId": "P10498400",
+          "interestedId":["",""],
+          "img":"bnglw2.jpg",
+          "title":"Row House available for sell",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+          "price": 500000,
+          "type": "rent",  
+          "sellType":"sell" 
+        }]
       }
       ]
   },
