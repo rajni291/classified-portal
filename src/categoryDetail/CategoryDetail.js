@@ -30,17 +30,13 @@ class CategoryDetail extends Component {
       let categoryId =this.props.match.params.catId;
       let categoriesList=this.props.categories;
       let categoryData= categoriesList.filter((e) => e.catId === categoryId);
-      this.state.subCategory.map((item) => {
-          
-      });
       if(categoryData.length!==0){
           this.setState(
           { 
               categoryId :  categoryId,
               categoryData:categoryData[0],
-              subCategory: categoryData[0].subCategory,
-              subCategoryList: 
-          });
+              subCategory: categoryData[0].subCategory
+          })
       }
 
     }

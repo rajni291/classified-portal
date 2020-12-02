@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import './Home.css';
-import {categoryService} from '../category/CategoryService';
 import Category from '../category/Category';
 import PostAd from '../PostAd/PostAd';
 import CategoryDetail from '../categoryDetail/CategoryDetail';
 import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import AdListing from '../postAd/AdListing';
+import AdListing from '../PostAd/AdListing';
 
 
 class Home extends Component {
