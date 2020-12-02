@@ -26,7 +26,14 @@
     top:4px;
   }
   .content-body{
+<<<<<<< HEAD
     padding-top: 25px;
+=======
+    /* height: 540px; */
+    height: 100%;
+    padding-top: 230px;
+    padding-bottom: 40px;
+>>>>>>> 351aaeb72ec60634542a537346fc5eb0efd56b45
     text-align: center;
     background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(./Web_Photo_Editor.jpg) repeat;
     background-size: 90%;
@@ -86,9 +93,11 @@
    .footer {
     color: white;
     background-color: #000000;
-    padding: 30px;
+    padding: 5px;
     text-align: center;
-    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 .profile-header{
