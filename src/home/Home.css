@@ -38,10 +38,16 @@
     position: absolute; 
     font-size: 20px;
     right: 1%;
-    cursor: pointer;
+    cursor: pointer !important;
     text-align: center;
     display: flex;
-    
+    width: 250px;
+
+  }
+
+  .profile :hover{
+    background-color: gray;
+    cursor: pointer;
   }
 
   .post{

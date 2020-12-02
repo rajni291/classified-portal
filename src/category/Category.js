@@ -71,7 +71,7 @@ class Cateogry extends Component {
                             <div className="post" >Post Ads</div>
                         </NavLink>
                 </div>
-                <div className="category-container">
+                <div className="browse">
                 <div className="cateogry-title">Browse Categories</div>
                 <div className="tile-container">
                     {
