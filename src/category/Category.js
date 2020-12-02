@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Category.css'
 import property from '../core/assets/property.png';
 import vehicle from '../core/assets/vehicle.png';
@@ -9,6 +9,8 @@ import furniture from '../core/assets/furniture.png';
 import electronics from '../core/assets/electronics.png';
 import home from '../core/assets/home.png';
 import sell from '../core/assets/sell.png';
+import firebase from '../core/firebase';
+
 
 class Cateogry extends Component {
 
@@ -16,9 +18,31 @@ class Cateogry extends Component {
         super(props);
         this.url = '../core/assets/';
     }
+    state = {
+        selectedCategoryAds: null
+    }
 
-   redirectCategoryDetail= (id) =>{
-      this.props.history.push("/categoryDetail/"+id);
+    redirectCategoryDetail = (id) => {
+        this.getAllAdsOfSelectedCateogry(id);
+    }
+
+    getAllAdsOfSelectedCateogry = (id) => {
+        var classifiedRef = firebase.firestore().collection('ClassfiedAds');
+        let CategoryAds = [];
+        // eslint-disable-next-line no-undef
+        classifiedRef.where("catId", "==", id).get()
+            .then(snapshot => {
+                snapshot.forEach(category => {
+                    var items = category.data()
+                    CategoryAds.push(items.adListing);
+                });
+                this.setState(
+                    {
+                        selectedCategoryAds: CategoryAds
+                    });
+                if (this.state.selectedCategoryAds)
+                    this.props.history.push("/categoryDetail/" + id);
+            });
     }
 
     getImageSrc = (id) => {
@@ -65,33 +89,33 @@ class Cateogry extends Component {
     render() {
         return (
             <div>
-                 <div className="category-header">
-                        <img className="dashboard-tabs-icon" src={sell} alt="" height="70px" />
-                        <NavLink to="/postadd" className="Link-header"  >
-                            <div className="post" >Post Ads</div>
-                        </NavLink>
+                <div className="category-header">
+                    <img className="dashboard-tabs-icon" src={sell} alt="" height="70px" />
+                    <NavLink to="/postadd" className="Link-header"  >
+                        <div className="post" >Post Ads</div>
+                    </NavLink>
                 </div>
                 <div className="browse">
-                <div className="cateogry-title">Browse Categories</div>
-                <div className="tile-container">
-                    {
-                        this.props.categories.map((item, i) => {
-                            return (
-                                <div key={i} className="category-tile" onClick={() => this.redirectCategoryDetail(item.catId)}>
-                                    {/* <div className="category-text">{item.catName}</div> */}
-                                    <img  className="category-icon" src={this.getImageSrc(item.catId)} alt="" height="70px" />
-                                    <div className="icon-container" style={{backgroundColor:this.getbgColor(item.catId)}}>
-                                    {item.catName}
+                    <div className="cateogry-title">Browse Categories</div>
+                    <div className="tile-container">
+                        {
+                            this.props.categories.map((item, i) => {
+                                return (
+                                    <div key={i} className="category-tile" onClick={() => this.redirectCategoryDetail(item.catId)}>
+                                        {/* <div className="category-text">{item.catName}</div> */}
+                                        <img className="category-icon" src={this.getImageSrc(item.catId)} alt="" height="70px" />
+                                        <div className="icon-container" style={{ backgroundColor: this.getbgColor(item.catId) }}>
+                                            {item.catName}
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                        })
-                    }
+                                )
+                            })
+                        }
 
+                    </div>
                 </div>
             </div>
-            </div>
-            
+
         )
     }
 }
