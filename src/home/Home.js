@@ -7,6 +7,7 @@ import PostAd from '../postAd/PostAd';
 import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import AdListing from '../postAd/AdListing';
 
 
 class Home extends Component {
@@ -98,9 +99,9 @@ class Home extends Component {
                             <Router>
                                 <Switch>
                                     <Route exact path="/" component={() => <Category categories={this.state.allCategories} />} />
-
+                                    <Route exact path="/allAds" component={() => <AdListing />} />
                                     <Route exact path="/category" component={() => <Category categories={this.state.allCategories} />} />
-                                    <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} />} />
+                                    <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} owner={this.props.currentUser} />} />
                                 </Switch>
                             </Router>
                         }
