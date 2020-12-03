@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import {  NavLink } from 'react-router-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import './Category.css'
 import property from '../core/assets/property.png';
 import vehicle from '../core/assets/vehicle.png';
@@ -8,7 +10,9 @@ import miscellaneous from '../core/assets/miscellaneous.png';
 import furniture from '../core/assets/furniture.png';
 import electronics from '../core/assets/electronics.png';
 import home from '../core/assets/home.png';
-import sell from '../core/assets/sell.png';
+import sell from '../core/assets/banner1.png';
+import buy from '../core/assets/banner2.png';
+import find from '../core/assets/banner3.png';
 
 class Cateogry extends Component {
 
@@ -66,7 +70,21 @@ class Cateogry extends Component {
         return (
             <div>
                  <div className="category-header">
-                        <img className="dashboard-tabs-icon" src={sell} alt="" height="70px" />
+                     <div className="carousel-wrapper">
+                        <Carousel autoPlay={true} infiniteLoop={true}  showThumbs={false} interval={3000} showStatus={false}>
+                        <div>
+                            <img className="dashboard-tabs-icon" src={find} alt="" height="70px" />
+                        </div>
+                        <div>
+                            <img className="dashboard-tabs-icon" src={buy} alt="" height="70px" />
+                        </div>
+                        <div>
+                            <img className="dashboard-tabs-icon" src={sell} alt="" height="70px" />
+                         </div>
+                        </Carousel>
+                     </div>
+               
+                        
                         <NavLink to="/postadd" className="Link-header"  >
                             <div className="post" >Post Ads</div>
                         </NavLink>

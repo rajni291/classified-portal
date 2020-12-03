@@ -99,8 +99,9 @@ class PostAd extends Component {
         if (this.state.isRedirected)
             return (<Redirect to='/allAds' />)
         return (
-            <div className="category-container">
-                <div className="cateogry-title">Post Ads</div>
+        <div className="category-container">
+            <div className="postAdBorder">
+                <div className="postAd-title">Post Ads</div>
                 <form onSubmit={this.handleSubmit} className="post-form form-container">
                     <div className="table-wrapper">
                         <label className="first-label">
@@ -192,14 +193,14 @@ class PostAd extends Component {
                     </div>
 
 
-                    <div><input type="submit" value="Submit" /></div>
+                    <div><input type="submit" className="postAd-button" value="Submit" /></div>
                 </form>
 
             </div>
-        )
-    }
-
-
+               
+        </div>
+    )
+}
 }
 
 export default PostAd;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
+import bnglw from '../core/assets/bnglw1.jpg';
 
 class CategoryDetail extends Component {
 
@@ -57,15 +58,14 @@ class CategoryDetail extends Component {
                     </div>
                     <div className="category-items">
                     {
-                        this.state.subCategory.map((item) => {
-                            return item.subCatList.map((lst, j) => (
-                                <div key={j} className="categoryDetail-tile" >
-                                   <div className="category-menu">
-                                        <img src={this.getSrc(lst.img)} alt="" height="70px" />
-                                    </div>
-                            <div className="category-items">{lst.description}</div>
-                                </div>
-                            ))
+                        this.state.subCategory.map((item,j) => {
+                            return ( <div key={j} className="categoryDetail-tile" >
+                            <div className="category-menu">
+                                <img src={bnglw} alt=""></img>
+                             </div>
+                     <div className="category-items">{item.description}</div>
+                         </div>
+                            )
                         })
                     }
                     </div>

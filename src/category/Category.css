@@ -1,16 +1,12 @@
 .category-header {
-    /* background-color: #282c34;
-    min-height: 100vh; */
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
     font-size: calc(10px + 2vmin);
     color: white;
     position: fixed;
     width: 100%;
-    position: relative;
-    margin-top: -15px;
+    position: inherit;
+    margin-top: -10px;
   }
   
 .cateogry-title{
