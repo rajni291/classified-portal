@@ -15,8 +15,10 @@
     color: #61dafb;
   }
   .dashboard-tabs-icon {
-    height: 215px;
+    width: 40% !important;
+    height: 185px;
     padding-top: 30px;
+    margin-bottom: 45px;
   }
   .title {
     position: absolute;
@@ -26,12 +28,12 @@
     top:4px;
   }
   .content-body{
-    padding: 25px;
-    /* height: 540px; */
+    padding-top: 50px;
     height: 100%;
     text-align: center;
     background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(./Web_Photo_Editor.jpg) repeat;
     background-size: 90%;
+    margin-bottom: 40px;
   }
 
   .profile{
@@ -55,10 +57,10 @@
     padding: 10px;
     width: 90px;
     font-size: 20px;
-    background-color: cornflowerblue;
+    background-color: #3cc443;
     border-radius: 4px;
-    top: 185px;
-    right: 20%;
+    top: 245px;
+    right: 13%;
     cursor: pointer;
     text-align: center;
   }
@@ -95,15 +97,15 @@
    .footer {
     color: white;
     background-color: #000000;
-    padding: 5px;
+    padding: 12px;
     text-align: center;
     position: fixed;
     width: 100%;
     bottom: 0;
 }
 
-.profile-header{
-  color:white;
+.profile-header {
+  color: white;
   position: fixed;
   width: 100%;
   background-color: black;
@@ -115,12 +117,27 @@ font-size: 28px;
 }
 .profile-text{
   font-family: sans-serif;
-    padding-top: 6px;
-    padding-right: 5px;
-    cursor: pointer;
+    padding-top: 6px
 }
-.home{
+
+.home {
   position: absolute;
   font-size: 25px;
   left: 1%;
+}
+
+.carousel .slide {
+  background-color: white !important;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #000 !important;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid #000 !important;
+}
+
+.carousel-wrapper{
+  box-shadow: 0 10px 20px rgb(206 206 206 / 19%), 0 3px 3px rgb(192 192 192 / 23%);
 }

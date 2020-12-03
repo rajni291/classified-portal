@@ -99,8 +99,9 @@ class PostAd extends Component {
         if (this.state.isRedirected)
             return (<Redirect to='/allAds' />)
         return (
-            <div className="category-container">
-                <div className="cateogry-title">Post Ads</div>
+        <div className="category-container">
+            <div className="postAdBorder">
+                <div className="postAd-title">Post Ads</div>
                 <form onSubmit={this.handleSubmit} className="post-form form-container">
                     <div className="table-wrapper">
                         <label className="first-label">
@@ -191,15 +192,15 @@ class PostAd extends Component {
                         <input className="second-label form-select" type="number" value={this.state.price} onChange={(e) => this.setState({ price: e.currentTarget.value })} />
                     </div>
 
+                  <div className="submit"><input type="submit" value="Post" /></div>
 
-                    <div className="submit"><input type="submit" value="Post" /></div>
                 </form>
 
             </div>
-        )
-    }
-
-
+               
+        </div>
+    )
+}
 }
 
 export default PostAd;
