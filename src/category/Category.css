@@ -15,6 +15,9 @@
     font-family: sans-serif;
     width: 100%;
 }
+.browse{
+    padding-top: 50px;
+}
 .category-container{
     padding: 20px;
 }
@@ -111,4 +114,9 @@
     margin-bottom: 30px;
     cursor: pointer;
     position: relative;
+}
+
+.category-img{
+    height: 220px;
+    width: 100%;
 }

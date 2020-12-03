@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import {  NavLink } from 'react-router-dom';
+import firebase from '../core/firebase';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import './Category.css'
@@ -20,11 +21,14 @@ class Cateogry extends Component {
         super(props);
         this.url = '../core/assets/';
     }
-
-   redirectCategoryDetail= (id) =>{
-      this.props.history.push("/categoryDetail/"+id);
+    state = {
+        selectedCategoryAds: null
     }
 
+    redirectCategoryDetail = (id) => {
+        this.props.history.push("/categoryDetail/"+id);
+    }
+    
     getImageSrc = (id) => {
 
         switch (id.toLowerCase()) {
@@ -89,27 +93,27 @@ class Cateogry extends Component {
                             <div className="post" >Post Ads</div>
                         </NavLink>
                 </div>
-                <div className="category-container">
-                <div className="cateogry-title">Browse Categories</div>
-                <div className="tile-container">
-                    {
-                        this.props.categories.map((item, i) => {
-                            return (
-                                <div key={i} className="category-tile" onClick={() => this.redirectCategoryDetail(item.catId)}>
-                                    {/* <div className="category-text">{item.catName}</div> */}
-                                    <img  className="category-icon" src={this.getImageSrc(item.catId)} alt="" height="70px" />
-                                    <div className="icon-container" style={{backgroundColor:this.getbgColor(item.catId)}}>
-                                    {item.catName}
+                <div className="browse">
+                    <div className="cateogry-title">Browse Categories</div>
+                    <div className="tile-container">
+                        {
+                            this.props.categories.map((item, i) => {
+                                return (
+                                    <div key={i} className="category-tile" onClick={() => this.redirectCategoryDetail(item.catId)}>
+                                        {/* <div className="category-text">{item.catName}</div> */}
+                                        <img className="category-icon" src={this.getImageSrc(item.catId)} alt="" height="70px" />
+                                        <div className="icon-container" style={{ backgroundColor: this.getbgColor(item.catId) }}>
+                                            {item.catName}
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                        })
-                    }
+                                )
+                            })
+                        }
 
+                    </div>
                 </div>
             </div>
-            </div>
-            
+
         )
     }
 }

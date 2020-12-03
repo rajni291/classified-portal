@@ -40,9 +40,16 @@
     position: absolute; 
     font-size: 20px;
     right: 1%;
-    cursor: pointer;
+    cursor: pointer !important;
     text-align: center;
     display: flex;
+    width: 250px;
+
+  }
+
+  .profile :hover{
+    background-color: gray;
+    cursor: pointer;
   }
 
   .post{
@@ -52,7 +59,7 @@
     font-size: 20px;
     background-color: #3cc443;
     border-radius: 4px;
-    top: 250px;
+    top: 245px;
     right: 13%;
     cursor: pointer;
     text-align: center;
@@ -97,12 +104,13 @@
     bottom: 0;
 }
 
-.profile-header{
-  color:white;
+.profile-header {
+  color: white;
   position: fixed;
   width: 100%;
   background-color: black;
   height: 40px;
+  cursor: pointer;
 }
 .pull-right{
 font-size: 28px;
@@ -110,6 +118,12 @@ font-size: 28px;
 .profile-text{
   font-family: sans-serif;
     padding-top: 6px
+}
+
+.home {
+  position: absolute;
+  font-size: 25px;
+  left: 1%;
 }
 
 .carousel .slide {

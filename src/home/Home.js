@@ -7,6 +7,7 @@ import CategoryDetail from '../categoryDetail/CategoryDetail';
 import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import AdListing from '../PostAd/AdListing';
 
 
@@ -73,20 +74,27 @@ class Home extends Component {
         return (
             !this.state.loading && this.state.allCategories.length > 0 && <div>
                 <Router>
-                <div className="profile-header">
-                            <div className="profile" onClick={() => this.signout()}>
-                                <div className="profile-text" >{this.email}</div>
-                                <div className="pull-right"><FontAwesomeIcon icon={faUserCircle} /></div>
+                    <div className="profile-header">
+                        <div className="home" >
+                            <NavLink to="/" className="Link-header" >
+                                <FontAwesomeIcon icon={faHome} />
+                            </NavLink>
+                        </div>
+                        <div className="profile" onClick={() => this.signout()}>
+                            <div className="profile-text" >{this.email}</div>
+                            <div className="pull-right" >
+                                <FontAwesomeIcon icon={faUserCircle} />
                             </div>
-
                         </div>
 
+                    </div>
 
-                        <NavLink to="/category" activeClassName="active" className="Link-header" >
-                            {/* <div className="title"> One Click</div> */}
-                        </NavLink>
 
-                       
+                    <NavLink to="/category" activeClassName="active" className="Link-header" >
+                        {/* <div className="title"> One Click</div> */}
+                    </NavLink>
+
+
                     <div className="content-body">
                         {
                             <Router>
@@ -94,7 +102,7 @@ class Home extends Component {
                                     <Route exact path="/" component={() => <Category categories={this.state.allCategories} />} />
                                     <Route exact path="/allAds" component={() => <AdListing />} />
                                     <Route exact path="/category" component={() => <Category categories={this.state.allCategories} />} />
-                                    <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} />} />
+                                    <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} owner={this.props.currentUser} />} />
                                     <Route exact path="/categoryDetail/:catId" component={() => <CategoryDetail categories={this.state.allCategories} />} />
                                 </Switch>
                             </Router>
