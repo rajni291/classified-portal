@@ -51,6 +51,10 @@ class CategoryDetail extends Component {
               CategoryAds.push(items.adListing);
               console.log(CategoryAds);
           });
+
+          CategoryAds[0].sort(function (a, b) {
+            return new Date(a.startDate).getTime() - new Date(b.startDate).getTime(); 
+        }).reverse();
           this.setState(
               {
                   categoryList: CategoryAds,

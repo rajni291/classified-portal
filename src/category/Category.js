@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import {  NavLink } from 'react-router-dom';
-import firebase from '../core/firebase';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import './Category.css'

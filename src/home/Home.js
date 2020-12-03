@@ -8,7 +8,6 @@ import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
-import AdListing from '../postAd/AdListing';
 
 
 class Home extends Component {
@@ -17,7 +16,8 @@ class Home extends Component {
     state = {
         allCategories: [],
         loading: true,
-        loggedout: false
+        loggedout: false,
+        showmenu: false
     }
 
     constructor(props) {
@@ -80,10 +80,13 @@ class Home extends Component {
                                 <FontAwesomeIcon icon={faHome} />
                             </NavLink>
                         </div>
-                        <div className="profile" onClick={() => this.signout()}>
+                        <div className="profile" onClick={() => this.setState({ showmenu: !this.state.showmenu })}>
                             <div className="profile-text" >{this.email}</div>
                             <div className="pull-right" >
                                 <FontAwesomeIcon icon={faUserCircle} />
+                            </div>
+                            <div className={this.state.showmenu ? 'item-show' : 'item-hide'} onClick={this.signout}>  
+                            <a href="/" onClick={this.signout}>sign out</a>
                             </div>
                         </div>
 
@@ -100,7 +103,6 @@ class Home extends Component {
                             <Router>
                                 <Switch>
                                     <Route exact path="/" component={() => <Category categories={this.state.allCategories} />} />
-                                    <Route exact path="/allAds" component={() => <AdListing />} />
                                     <Route exact path="/category" component={() => <Category categories={this.state.allCategories} />} />
                                     <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} owner={this.props.currentUser} />} />
                                     <Route exact path="/categoryDetail/:catId" component={() => <CategoryDetail categories={this.state.allCategories} />} />
