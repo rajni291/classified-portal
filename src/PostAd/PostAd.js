@@ -68,7 +68,8 @@ class PostAd extends Component {
             startDate: today,
             title: this.state.title,
             isSoldout: false,
-            price: this.state.price
+            price: this.state.price,
+            isFav: false
         }
 
         let userActivityRef = firebase.firestore().collection('ClassfiedAds');

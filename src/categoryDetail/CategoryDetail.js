@@ -230,6 +230,19 @@ class CategoryDetail extends Component {
     }
 
 
+    setFilterList = (category) =>{
+        let temp =[];
+        this.state.filterCategoryList.forEach(element => {
+            if (element.listingId === category.listingId) {
+                element.isFav = !element.isFav;
+            }
+            temp.push(element);
+            
+        });
+        
+        this.setState({filterCategoryList:temp})
+    }
+
     render() {
         return (
             !this.state.loading && this.state.categoryList.length > 0 && <div className="category-browsecontainer">
@@ -284,7 +297,7 @@ class CategoryDetail extends Component {
                                         <div className="category-itemtext">
                                             <div className="category-itemtitle">{item.title}
                                             <Link to="/payment" className="category-itemAdtype">Buy</Link>
-                                            <span onClick={()=> this.setState({isFav: !this.state.isFav})} className={this.state.isFav? 'category-favAdded' : 'category-fav'}><FontAwesomeIcon icon={faHeart} ></FontAwesomeIcon></span>
+                                            <span onClick={()=> this.setFilterList(item)} className={item.isFav? 'category-favAdded' : 'category-fav'}><FontAwesomeIcon icon={faHeart} ></FontAwesomeIcon></span>
                                             </div>
                                             <div className="category-price">Price - {item.price} <FontAwesomeIcon icon={faRupeeSign} /></div>
 

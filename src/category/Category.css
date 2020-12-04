@@ -188,21 +188,6 @@
     color: green;
 }
 
-
-.category-fav{
-    color:#9e9595;
-    float: right;
-    margin-right: 5%;
-    font-size: 20px;
-}
-
-.category-favAdded{
-    color:#9e9595;
-    float: right;
-    margin-right: 5%;
-    font-size: 20px;
-}
-
 .category-price{
     margin-bottom: 15px;
     font-weight: 600;
