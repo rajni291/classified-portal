@@ -17,6 +17,10 @@
 .phone{
     display: flex;
 }
+.contact-number{
+    padding-top: 7px;
+    padding-left: 5px;
+}
 .contact-alt{
     margin-left: 20px;
 }

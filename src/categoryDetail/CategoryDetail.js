@@ -242,7 +242,7 @@ class CategoryDetail extends Component {
                                                     <div className="contact-pop">
                                                         <div className="phone">
                                                             <img className="contact-img" src={icon_phone} alt=""></img>
-                                                            <span> {item.contact}</span>
+                                                            <span className="contact-number"> {item.contact}</span>
                                                         </div>
                                                         <hr />
                                                         <div className="contact-secondBody">
