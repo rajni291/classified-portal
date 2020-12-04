@@ -141,15 +141,16 @@
 .category-itemtitle{
     margin-bottom: 20px;
     margin-top: 10px;
+    font-weight: 600;
 }
 
 .category-itemlocation{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .category-itemdesc{
-    margin-top: 20px;
-    padding-right: 20px;
+    margin-top: 15px;
+    padding-right: 20px
 }
 
 .category-itemspan{
@@ -185,4 +186,24 @@
     font-weight: 700;
     background-color: #d7d4d4;
     color: green;
+}
+
+
+.category-fav{
+    color:#9e9595;
+    float: right;
+    margin-right: 5%;
+    font-size: 20px;
+}
+
+.category-favAdded{
+    color:#9e9595;
+    float: right;
+    margin-right: 5%;
+    font-size: 20px;
+}
+
+.category-price{
+    margin-bottom: 15px;
+    font-weight: 600;
 }

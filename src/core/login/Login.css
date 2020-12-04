@@ -3,8 +3,8 @@
   margin: 0 auto;
   padding: 40px;
   box-sizing: border-box;
-  border: 1px solid #63b3ed;
   position: relative;
+  background-color: white;
   height: 400px;
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
 }
@@ -19,19 +19,29 @@
 }
 input.control-width,
 .ctrl-padding {
-  width: 100%;
-  margin-bottom: 30px;
-  height: 20px;
-  background-color: #add8e666;
+  width: 96%;
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #e7ebee;
+    outline: none;
+    color: #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 20px;
 }
 .ctrl-padding {
   margin-bottom: 20px;
 }
 button.signIn {
-  width: 100%;
-  background-color: #68d391;
-  height: 40px;
-  cursor: pointer;
+   width: 100%;
+    background-color: #68d391;
+    height: 40px;
+    border-color: #68d391;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 .signin-container {
   padding-bottom: 10px;

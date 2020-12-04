@@ -3,17 +3,43 @@ import { withRouter } from "react-router";
 import { Link } from 'react-router-dom';
 import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarker ,faHeart, faRupeeSign} from '@fortawesome/free-solid-svg-icons'
 import notFound from '../core/assets/noimage.jpg'
+import bike1 from '../core/categorytype/bike1.jpg'
+import bike2 from '../core/categorytype/bike2.jpg'
+import bike3 from '../core/categorytype/bike3.jpg'
 import bunglow1 from '../core/categorytype/bunglow1.jpg'
 import bunglow2 from '../core/categorytype/bunglow2.jpg'
 import bunglow3 from '../core/categorytype/bunglow3.jpg'
+import car1 from '../core/categorytype/car1.jpg'
+import car2 from '../core/categorytype/car2.jpg'
+import car3 from '../core/categorytype/car3.jpg'
+import chair1 from '../core/categorytype/chair1.jpg'
+import chair2 from '../core/categorytype/chair2.jpg'
+import chair3 from '../core/categorytype/chair3.jpg'
+import cupboard1 from '../core/categorytype/cupboard1.jpg'
+import cupboard2 from '../core/categorytype/cupboard2.jpg'
+import cupboard3 from '../core/categorytype/cupboard3.jpg'
 import flat1 from '../core/categorytype/flat1.jpg'
 import flat2 from '../core/categorytype/flat2.jpg'
 import flat3 from '../core/categorytype/flat3.jpg'
+import fridge1 from '../core/categorytype/fridge1.jpg'
+import fridge2 from '../core/categorytype/fridge2.jpg'
+import lap1 from '../core/categorytype/lap1.jpg'
+import lap2 from '../core/categorytype/lap2.jpg'
+import lap3 from '../core/categorytype/lap3.jpg'
+import mobile1 from '../core/categorytype/mobile1.jpg'
+import mobile2 from '../core/categorytype/mobile2.jpg'
+import mobile3 from '../core/categorytype/mobile3.jpg'
+import oven1 from '../core/categorytype/oven1.jpg'
+import painting1 from '../core/categorytype/painting1.jpg'
+import painting2 from '../core/categorytype/painting2.jpg'
 import rowHouse1 from '../core/categorytype/rowHouse1.jpg'
 import rowHouse2 from '../core/categorytype/rowHouse2.jpg'
 import rowHouse3 from '../core/categorytype/rowHouse3.jpg'
+import table1 from '../core/categorytype/table1.jpg'
+import table2 from '../core/categorytype/table2.jpg'
+import table3 from '../core/categorytype/table3.jpg'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import './CategoryDetail.css';
@@ -21,6 +47,7 @@ import icon_mail from '../core/assets/outlook.png';
 import icon_phone from '../core/assets/icon_phone.jpg';
 import icon_team from '../core/assets/teams.svg';
 import share_icon from '../core/assets/share.png';
+
 
 
 class CategoryDetail extends Component {
@@ -37,7 +64,8 @@ class CategoryDetail extends Component {
         categoryType: {},
         subcategoryType: [],
         loading: true,
-        openTeams: false
+        openTeams: false,
+        isFav:false
     }
 
     getSrc = (i, subcatId) => {
@@ -51,18 +79,56 @@ class CategoryDetail extends Component {
             }
         }
         switch (subcatId + "-" + num) {
+            case "bike-1": return bike1
+            case "bike-2": return bike2
+            case "bike-3": return bike3
             case "bunglow-1": return bunglow1
             case "bunglow-2": return bunglow2
             case "bunglow-3": return bunglow3
+            case "car-1": return car1
+            case "car-2": return car2
+            case "car-3": return car3
+            case "chair-1": return chair1
+            case "chair-2": return chair2
+            case "chair-3": return chair3
+            case "cupboard-1": return cupboard1
+            case "cupboard-2": return cupboard2
+            case "cupboard-3": return cupboard3
             case "flat-1": return flat1
             case "flat-2": return flat2
             case "flat-3": return flat3
+            case "fridge-1": return fridge1
+            case "fridge-2": return fridge2
+            case "lap-1": return lap1
+            case "lap-2": return lap2
+            case "lap-3": return lap3
+            case "mobile-1": return mobile1
+            case "mobile-2": return mobile2
+            case "mobile-3": return mobile3
+            case "oven-1": return oven1
+            case "painting-1": return painting1
+            case "painting-2": return painting2
             case "rowHouse-1": return rowHouse1
             case "rowHouse-2": return rowHouse2
             case "rowHouse-3": return rowHouse3
+            case "table-1": return table1
+            case "table-2": return table2
+            case "table-3": return table3
             default:
                 return notFound;
         };
+    }
+
+    togglefav =() =>{
+        let toggle=false;
+        if(!this.state.isFav){
+            toggle=true
+        }
+
+        this.setState(
+            {
+                isFav:toggle
+            });
     }
 
     handleChangeChk = (id) => {
@@ -229,8 +295,10 @@ class CategoryDetail extends Component {
                                     <div className="category-items">
                                         <div className="category-itemtext">
                                             <div className="category-itemtitle">{item.title}
-                                                <span className="category-itemAdtype">{item.adType}</span>
+                                            <Link to="/payment" className="category-itemAdtype">Buy</Link>
+                                            <span onClick={()=> this.togglefav()} className={this.state.isFav? 'category-favAdded' : 'category-fav'}><FontAwesomeIcon icon={faHeart} ></FontAwesomeIcon></span>
                                             </div>
+                                            <div className="category-price">Price - {item.price} <FontAwesomeIcon icon={faRupeeSign} /></div>
 
                                             <div className="category-itemlocation">
                                                 <span><FontAwesomeIcon icon={faMapMarker} /> {item.location}</span>
@@ -239,8 +307,8 @@ class CategoryDetail extends Component {
                                                         <span className="category-itemspan">contact owner </span>
                                                     )}
                                                     position="right center"
-                                                    closeOnDocumentClick
-                                                >
+                                                    closeOnDocumentClick>
+
                                                     <div className="contact-pop">
                                                         <div className="phone">
                                                             <img className="contact-img" src={icon_phone} alt=""></img>
