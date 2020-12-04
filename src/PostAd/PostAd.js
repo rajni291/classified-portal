@@ -67,7 +67,8 @@ class PostAd extends Component {
             owner: this.props.owner.email,
             startDate: today,
             title: this.state.title,
-            isSoldout: false
+            isSoldout: false,
+            price: this.state.price
         }
 
         let userActivityRef = firebase.firestore().collection('ClassfiedAds');
@@ -205,7 +206,7 @@ class PostAd extends Component {
                         </div>
 
                         <div className="table-wrapper">
-                            <label className="first-label">Price</label>
+                            <label className="first-label">Price(₹)</label>
                             <input className="second-label form-select" type="number" value={this.state.price} onChange={(e) => this.setState({ price: e.currentTarget.value })} />
                         </div>
 
