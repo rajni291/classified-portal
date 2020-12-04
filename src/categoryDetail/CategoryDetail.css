@@ -32,3 +32,17 @@ a{
     outline: none;
     border: none;
 }
+
+.category-fav{
+    color:#9e9595;
+    float: right;
+    margin-right: 5%;
+    font-size: 20px;
+}
+
+.category-favAdded{
+    color:red;
+    float: right;
+    margin-right: 5%;
+    font-size: 20px;
+}

@@ -7,7 +7,7 @@ import { faMapMarker ,faHeart, faRupeeSign} from '@fortawesome/free-solid-svg-ic
 import notFound from '../core/assets/noimage.jpg'
 import bike1 from '../core/categorytype/bike1.jpg'
 import bike2 from '../core/categorytype/bike2.jpg'
-import bike3 from '../core/categorytype/bike3.jpg'
+import bike3 from '../core/categorytype/Bike3.jpg'
 import bunglow1 from '../core/categorytype/bunglow1.jpg'
 import bunglow2 from '../core/categorytype/bunglow2.jpg'
 import bunglow3 from '../core/categorytype/bunglow3.jpg'
@@ -37,9 +37,9 @@ import painting2 from '../core/categorytype/painting2.jpg'
 import rowHouse1 from '../core/categorytype/rowHouse1.jpg'
 import rowHouse2 from '../core/categorytype/rowHouse2.jpg'
 import rowHouse3 from '../core/categorytype/rowHouse3.jpg'
-import table1 from '../core/categorytype/table1.jpg'
-import table2 from '../core/categorytype/table2.jpg'
-import table3 from '../core/categorytype/table3.jpg'
+import table1 from '../core/categorytype/Table1.jpg'
+import table2 from '../core/categorytype/Table2.jpg'
+import table3 from '../core/categorytype/Table3.jpg'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import './CategoryDetail.css';
@@ -117,18 +117,6 @@ class CategoryDetail extends Component {
             default:
                 return notFound;
         };
-    }
-
-    togglefav =() =>{
-        let toggle=false;
-        if(!this.state.isFav){
-            toggle=true
-        }
-
-        this.setState(
-            {
-                isFav:toggle
-            });
     }
 
     handleChangeChk = (id) => {
@@ -296,7 +284,7 @@ class CategoryDetail extends Component {
                                         <div className="category-itemtext">
                                             <div className="category-itemtitle">{item.title}
                                             <Link to="/payment" className="category-itemAdtype">Buy</Link>
-                                            <span onClick={()=> this.togglefav()} className={this.state.isFav? 'category-favAdded' : 'category-fav'}><FontAwesomeIcon icon={faHeart} ></FontAwesomeIcon></span>
+                                            <span onClick={()=> this.setState({isFav: !this.state.isFav})} className={this.state.isFav? 'category-favAdded' : 'category-fav'}><FontAwesomeIcon icon={faHeart} ></FontAwesomeIcon></span>
                                             </div>
                                             <div className="category-price">Price - {item.price} <FontAwesomeIcon icon={faRupeeSign} /></div>
 
