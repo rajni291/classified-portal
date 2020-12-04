@@ -9,6 +9,7 @@ import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
+import capita from '../core/assets/capita.png';
 
 
 class Home extends Component {
@@ -76,6 +77,10 @@ class Home extends Component {
             !this.state.loading && this.state.allCategories.length > 0 && <div>
                 <Router>
                     <div className="profile-header">
+                    <span className="logo">
+                    <img className="capita-logo" src={capita} alt=""></img>
+                    </span>
+                    
                         <div className="home" >
                             <NavLink to="/" className="Link-header" >
                                 <FontAwesomeIcon icon={faHome} />

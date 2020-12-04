@@ -170,3 +170,15 @@ a:hover{
 a{
   text-decoration: none;
 }
+.capita-logo{
+height: 80px;
+}
+.logo{
+  left: 0px; 
+  position: absolute;
+  background-color: gray;
+  margin-top: 30px;
+  height: 80px;
+  padding-top: 10px;
+  background-color: rgba(0,0,0,.04)
+}
