@@ -68,6 +68,23 @@ input[type="submit"] {
     padding: 30px;
     background-color: #efecec;
 }
+input[type="submit"]{
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid rgba(0,47,52,.2);
+    box-sizing: border-box;
+    background-color: #d8dfe0;
+    border-radius: 4px;
+    border-color: #d8dfe0;
+    font-size: 16px;
+    color:dimgrey;
+    cursor: pointer;
+}
+.submit{
+    position: relative;
+    left: 94%;
+}
 
 .postAd-button{
     padding: 10px;
@@ -79,3 +96,10 @@ input[type="submit"] {
     border: #3cc443 0px solid;
     cursor: pointer;
 }
+
+.toast-body {
+    color: rgba(0,0,0,0.87);
+    font-family: "Open Sans";
+    letter-spacing: 0.25px;
+    width:100%
+  }
