@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import './Home.css';
 import Category from '../category/Category';
-import PostAd from '../postAd/PostAd';
+import PostAd from '../PostAd/PostAd';
 import CategoryDetail from '../categoryDetail/CategoryDetail';
+import Payment from '../payment/payment';
 import firebase from '../core/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
@@ -106,6 +107,7 @@ class Home extends Component {
                                     <Route exact path="/category" component={() => <Category categories={this.state.allCategories} />} />
                                     <Route exact path="/postadd" component={() => <PostAd categories={this.state.allCategories} owner={this.props.currentUser} />} />
                                     <Route exact path="/categoryDetail/:catId" component={() => <CategoryDetail categories={this.state.allCategories} />} />
+                                    <Route exact path="/payment" component={() => <Payment  />} />
                                 </Switch>
                             </Router>
                         }
